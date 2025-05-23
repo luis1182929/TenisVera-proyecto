@@ -178,3 +178,16 @@
       border-radius: 0;
     }
   }
+  @media screen and (max-width: 576px) {
+    .banner-shoes-text {
+      font-size: 10px !important; 
+      margin-top: 80px !important; 
+      text-align: center; 
+    }
+  
+    .banner-shoes-text h2,
+    .banner-shoes-text p,
+    .banner-shoes-text button {
+      font-size: 12px;
+    }
+  }

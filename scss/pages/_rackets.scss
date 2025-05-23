@@ -87,3 +87,16 @@
       }
     }
   }
+  @media screen and (max-width: 576px) {
+    .banner-racket-text {
+      font-size: 12px;
+      margin-top: 40px;
+      text-align: center;
+  
+      h2,
+      p,
+      button {
+        font-size: 12px;
+      }
+    }
+  }

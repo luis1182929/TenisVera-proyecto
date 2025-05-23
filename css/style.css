@@ -1026,6 +1026,18 @@ div#borderlogin.card.login:hover {
     font-size: 17px;
   }
 }
+@media screen and (max-width: 576px) {
+  .banner-racket-text {
+    font-size: 12px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  .banner-racket-text h2,
+  .banner-racket-text p,
+  .banner-racket-text button {
+    font-size: 12px;
+  }
+}
 #zapatillas-grid {
   display: grid;
   grid-template-areas: "header header header" "banner1 banner1 banner1" "banner2 banner2 banner2" "sidebar main main" "footer footer footer";
@@ -1161,6 +1173,18 @@ div#borderlogin.card.login:hover {
   #sidebar-zapatillas {
     height: auto;
     border-radius: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .banner-shoes-text {
+    font-size: 10px !important;
+    margin-top: 80px !important;
+    text-align: center;
+  }
+  .banner-shoes-text h2,
+  .banner-shoes-text p,
+  .banner-shoes-text button {
+    font-size: 12px;
   }
 }
 #pelotas-grid {
