@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as variables;
+.navbar {
+    
+    padding: 3 0px;
+
+    .nav-link {
+        color: #000000;
+        font-weight: bold ;
+        &:hover {
+            color: #b7b7b7;
+            font-weight: normal;
+            transform: scale(1.03);
+        }
+        font-family: variables.$main-font;
+        font-weight: lighter;
+        
+    }
+    .nav-link.active {
+        color: #6a6a6a;
+        font-weight: 400!important;
+        
+    }
+    
+
+}.my-navbar {
+    background-color: #ffffff;
+}
+.breadcrumb {
+    font-size: 25px;
+}

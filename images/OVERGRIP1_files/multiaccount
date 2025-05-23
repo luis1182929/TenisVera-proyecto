@@ -1,0 +1,91 @@
+(function (window) {
+    if (window.cnLangConfigHelper) {
+        return;
+    }
+    window.cnLangConfigHelper = (function createCnLangConfigHelper() {
+        const config = [{"minifiedClientScriptUrl":"https://cdn.connectif.cloud/eu3/client-script/ef0eeba1-372a-48a7-ba98-4a21af85e747","lang":"es","currency":"EUR","connectifStoreId":"649eac35123d42bc55d9b5f2"},{"minifiedClientScriptUrl":"https://cdn.connectif.cloud/eu3/client-script/d094db65-3a9c-4572-b728-a33e848a4038","lang":"en","currency":"EUR","connectifStoreId":"6613a8d2fb390c5359f4aa11"}];
+        function getConfig() {
+            return config;
+        }
+
+        const readyStates = ['complete', 'interactive', 'loaded'];
+        if (readyStates.indexOf(document.readyState) >= 0) {
+            onDocumentLoaded();
+        } else {
+            document.addEventListener('DOMContentLoaded', onDocumentLoaded);
+        }
+
+        function onDocumentLoaded() {
+            if (Shopify) {
+                const currentLang = Shopify.locale;
+                const currentCurrency = Shopify.currency.active;
+                loadConnectifScript(currentLang, currentCurrency, config);
+            } else {
+                console.warn('Connectif could not be loaded, Shopify object is not available!.');
+            }
+        }
+        function loadConnectifScript(currentLang, currentCurrency, cnLangConfig) {
+            const configFilteredByLanguage = cnLangConfig.filter(
+                config => config.lang === currentLang
+            );
+            const configFilteredByCurrency = configFilteredByLanguage.filter(
+                config => config.currency === currentCurrency
+            );
+            const configFilteredWithoutCurrency = configFilteredByLanguage.filter(
+                config => config.currency === '' || config.currency === undefined
+            );
+
+            // Multiple matches by lang and currency should not be possible
+            // Give priority to more specific settings that match
+            if (configFilteredByCurrency.length > 0) {
+                const storeConfig = configFilteredByCurrency[0];
+                // Only stores with selected currency AND language can have a market.
+                let currentUrl = window.location.href.split('?')[0];
+                currentUrl = currentUrl.endsWith('/') ? currentUrl : currentUrl + '/';
+                const currentShopifyRoot = window.location.origin + window.Shopify.routes.root;
+                if (!storeConfig.marketUrl || storeConfig.marketUrl === currentShopifyRoot) {
+                    executeWhenCnHelperIsReady(() => {
+                        window.cnHelper.addConnectifStoreIdToCart(storeConfig.connectifStoreId);
+                        window.cnHelper.addConnectifIsTrackedPurchase(true);
+                    });
+                    createScriptTag(storeConfig.minifiedClientScriptUrl);
+                }
+                return;
+            }
+
+            if (configFilteredWithoutCurrency.length > 0) {
+                const connectifStoreId = configFilteredWithoutCurrency[0].connectifStoreId;
+                executeWhenCnHelperIsReady(() => {
+                    window.cnHelper.addConnectifStoreIdToCart(connectifStoreId);
+                    window.cnHelper.addConnectifIsTrackedPurchase(true);
+                });
+                createScriptTag(configFilteredWithoutCurrency[0].minifiedClientScriptUrl);
+                return;
+            }
+
+            executeWhenCnHelperIsReady(() => {
+                window.cnHelper.addConnectifIsTrackedPurchase(false);
+            });
+        }
+
+        function executeWhenCnHelperIsReady(callback) {
+            if (typeof window.cnHelper === 'object') {
+                callback();
+            } else {
+                document.addEventListener('cnHelper.loaded', () => {
+                    callback();
+                });
+            }
+        }
+
+        function createScriptTag(scriptUrl) {
+            const domCnScript = document.createElement('script');
+            domCnScript.type = 'text/javascript';
+            domCnScript.async = true;
+            domCnScript.src = scriptUrl;
+            document.head.appendChild(domCnScript);
+        }
+
+        return { getConfig };
+    })();
+})(window);

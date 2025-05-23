@@ -1,0 +1,84 @@
+@use '../abstracts/variables' as variables;
+#grid-ofertas {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "banner banner"
+        "ofertas ofertas"
+        "footer footer";
+        
+
+ #header-ofertas {
+    grid-area: header;
+
+
+ }   
+ #banner-ofertas {
+    grid-area: banner;
+ }
+ #main-ofertas {
+    grid-area: main;
+ }
+ #aside-ofertas {
+    grid-area: sidebar;
+ }
+ #footer-ofertas {
+    grid-area: footer;
+ }}
+#ofertas {
+    grid-area: ofertas;
+    width: 100%;
+    
+   
+   h2 {
+        text-align: left;
+        width: 100%;
+        margin-top: 50px;
+        margin-left: 50px;
+        font-size: 20px;
+        display: block;
+        font-family: variables.$main-font;
+        font-weight: lighter;
+        
+        color: rgb(0, 0, 0);
+        
+        
+        
+    }
+    .ofertas-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 0px 20px 10px 20px;
+        width: 100%;align-items: stretch;
+    }
+    .card {
+        width: 18rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    
+    }
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        h5 {
+            margin-bottom: 10px;
+        }
+        h6 {
+            margin-bottom: 10px;
+        }
+        .btn {
+            margin-top: auto;
+            align-self: center;
+        }
+        min-height: 200px;
+    }
+}
+
+
+.ofertared {
+    color: #d90429;
+}

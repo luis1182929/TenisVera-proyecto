@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as variables;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: variables.$main-font;
+    
+    
+
+
+}
+.my-h2 {
+    font-family: variables.$main-font !important;
+    font-weight: lighter !important;
+ 
+}
+.my-h3 {
+    font-family: variables.$main-font !important;
+    font-weight: lighter !important;
+}
+h5 ,card-title {
+    font-family: variables.$main-font !important;
+    font-weight: lighter !important;
+}
+h6 {
+    font-family: variables.$main-font !important;
+    font-weight: lighter !important;
+}
+.card-text {
+    font-family: variables.$main-font !important;
+    font-weight: lighter !important;
+}
+html, body {
+    overflow-x: hidden;
+    
+    
+}

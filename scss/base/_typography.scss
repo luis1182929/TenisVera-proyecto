@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as variables;
+
+a {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+body {
+    font-family: variables.$main-font !important;
+    
+}
+h1, h2, h3, h4, h5, h6, p, a {
+    font-weight: lighter !important;
+    font-family: variables.$main-font !important;
+  }
+

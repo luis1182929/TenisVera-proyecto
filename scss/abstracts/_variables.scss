@@ -1,0 +1,14 @@
+$main-color: #000000;
+$main-text-color: #14213d;
+$main-text-light-color: #3e5c76;
+$background-color: #ffffff;
+$main-font: "Boldonse", system-ui, sans-serif;
+$base-font-size: 1em;
+
+
+:root {
+  background-color: $background-color;
+  font-family: $main-font;
+  font-size: $base-font-size;
+
+}

@@ -1,0 +1,43 @@
+div form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+.formulario {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+  }
+  
+  .formulario label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .formulario input,
+  .formulario textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+  
+  .formulario textarea {
+    resize: vertical; 
+    height: 150px; 
+  }
+  
+  .formulario button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }

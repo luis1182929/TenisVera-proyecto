@@ -1,0 +1,68 @@
+.grid {
+  display: grid;
+  grid-template-areas:
+    "header   header   header header"
+    "carousel carousel carousel carousel"
+    "banner   banner   banner aside"
+    "main     main     main   aside"
+    "ofertas ofertas  ofertas aside"
+    "footer   footer   footer footer";
+  grid-template-columns: auto auto auto 150px;
+  grid-template-rows: 1fr auto auto auto;
+}
+#header {
+  grid-area: header;
+}
+#carousel {
+  grid-area: carousel;
+}
+#banner {
+  grid-area: banner;
+}
+#main {
+  grid-area: main;
+}
+#ofertas {
+  grid-area: ofertas;
+}
+#aside {
+  grid-area: aside;
+}
+#footer {
+  grid-area: footer;
+}
+
+@media screen and (max-width: 992px) {
+  .grid {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "carousel"
+      "banner"
+      "main"
+      "ofertas"
+      "aside"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+
+    .carousel-inner,
+    .carousel-item{
+      height: 100%;
+      width: auto;
+      
+    }
+    #carouselExampleAutoplaying {
+      height: 100%;
+    }
+  
+    .carousel-img {
+      height: 100%;
+      object-fit: cover;}
+    .banner {
+      height: 30vh;
+    }
+  }
+}
+
+

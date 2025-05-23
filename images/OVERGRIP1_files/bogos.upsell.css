@@ -1,0 +1,288 @@
+#bogos-upsell-view, .bogos-integration-page-builder-upsell {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap
+}
+
+.bogos-fbt-upsell-container {
+    padding: 6px;
+    border-radius: 8px;
+    width: 100%
+}
+
+#bogos-fbt-upsell-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    gap: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    container-type: inline-size;
+    container-name: upsell-container
+}
+
+.bogos-fbt-header-title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    color: #303030;
+    letter-spacing: -.2px
+}
+
+.bogos-fbt-header-description {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px
+}
+
+.bogos-fbt-upsell-body {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.bogos-fbt-upsell-body-classic-item-img-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    row-gap: 12px
+}
+
+.bogos-fbt-upsell-body-classic-item-img, .bogos-fbt-upsell-img-wrapper {
+    width: 80px;
+    height: 80px
+}
+
+img.bogos-fbt-upsell-img {
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
+    border-radius: 8px;
+    border: .019rem solid #e7e7e7
+}
+
+.bogos-fbt-plus {
+    padding: 0 4px
+}
+
+.bogos-fbt-upsell-body-item-checkbox {
+    cursor: pointer;
+    accent-color: #303030
+}
+
+.bogos-fbt-upsell-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 12px 0
+}
+
+.bogos-fbt-footer-price {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.bogos-fbt-footer-discounted-price {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    color: #a4721b
+}
+
+.bogos-fbt-footer-original-price {
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 20px;
+    text-decoration: line-through
+}
+
+.bogos-fbt-footer-price-title {
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 20px
+}
+
+.bogos-fbt-footer-button-add {
+    padding: 12px;
+    color: #fff;
+    background: #e6b55e;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer
+}
+
+.bogos-fbt-upsell-classic-info {
+    display: flex;
+    align-items: start;
+    gap: 4px
+}
+
+.bogos-fbt-upsell-body-classic-item-info {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    margin: 6px 0;
+    max-width: 100%
+}
+
+.bogos-fbt-classic-meta, .bogos-fbt-upsell-product-info {
+    flex-direction: column;
+    display: flex
+}
+
+.bogos-fbt-product-item-select-variant {
+    display: flex;
+    background: #fff;
+    align-items: center;
+    border: 1px solid #8a8a8a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / .05);
+    padding: 4px;
+    appearance: none;
+    width: 100%;
+    max-width: 150px;
+    font-size: 13px
+}
+
+.bogos-fbt-upsell-product-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 450;
+    font-size: 13px;
+    line-height: 20px;
+    max-width: 216px;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.bogos-fbt-product-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-decoration: none
+}
+
+.bogos-fbt-product-title:hover {
+    text-decoration: none
+}
+
+.bogos-fbt-this-item {
+    font-weight: 650;
+    font-size: 13px;
+    line-height: 20px
+}
+
+.bogos-fbt-upsell-body-stack-item {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    border-radius: 8px;
+    background: 0 0
+}
+
+.bogos-fbt-upsell-body-stack-meta {
+    display: flex;
+    align-items: center;
+    gap: 4px
+}
+
+button.bogos-fbt-see-more {
+    color: #005bd3;
+    background: 0 0;
+    border: none;
+    cursor: pointer;
+    padding: 0
+}
+
+button.bogos-fbt-see-more:hover {
+    text-decoration: #0a59da
+}
+
+.bogos-fbt-upsell-product-price {
+    display: flex;
+    gap: 4px;
+    font-size: 13px
+}
+
+.bogos-fbt-upsell-product-discounted-price {
+    color: #303030
+}
+
+.bogos-fbt-upsell-product-original-price {
+    text-decoration: line-through;
+    color: grey
+}
+
+.bogos-fbt-upsell-body:has(.bogos-fbt-upsell-body-stack-item) {
+    max-height: 400px;
+    overflow-y: auto
+}
+
+.bogos-btn-disable {
+    cursor: not-allowed;
+    opacity: .3;
+    pointer-events: none
+}
+
+.bogos-fbt-upsell-product-info {
+    justify-content: space-between;
+    padding: 4px 0
+}
+
+.bogos-fbt-product-info-classic {
+    display: flex
+}
+
+.bogos-fbt-upsell-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+@container upsell-container (min-width:1000px) {
+    .bogos-fbt-upsell-body:has(.bogos-fbt-upsell-body-stack-item), .bogos-fbt-upsell-extra:has(.bogos-fbt-upsell-body-stack-item) {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap
+    }
+
+    .bogos-fbt-upsell-body-stack-item {
+        width: 500px
+    }
+
+    .bogos-fbt-footer-button-add {
+        width: fit-content
+    }
+
+    .bogos-fbt-upsell-extra {
+        flex-direction: row
+    }
+
+    .bogos-fbt-upsell-product-title {
+        max-width: unset
+    }
+
+    .bogos-fbt-product-item-select-variant {
+        padding: 6px
+    }
+
+    .bogos-fbt-product-title {
+        width: unset
+    }
+
+    .bogos-fbt-upsell-body-classic-item-info {
+        justify-content: unset
+    }
+
+    .bogos-fbt-classic-meta {
+        flex-direction: row;
+        gap: 8px
+    }
+}
