@@ -64,5 +64,20 @@
     }
   }
 }
+@media screen and (max-width: 992px) {
+  #header {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .navbar {
+    justify-content: space-between !important;
+    padding: 10px 15px !important;
+  }
+
+  .navbar-toggler {
+    margin-left: auto !important;
+  }
+}
 
 

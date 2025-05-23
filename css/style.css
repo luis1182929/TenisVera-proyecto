@@ -109,6 +109,9 @@ h6 {
 
 html, body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  touch-action: manipulation;
+  max-width: 100%;
 }
 
 a {
@@ -486,6 +489,19 @@ div form {
     height: 30vh;
   }
 }
+@media screen and (max-width: 992px) {
+  #header {
+    display: block !important;
+    width: 100% !important;
+  }
+  .navbar {
+    justify-content: space-between !important;
+    padding: 10px 15px !important;
+  }
+  .navbar-toggler {
+    margin-left: auto !important;
+  }
+}
 header {
   grid-area: header;
   background-color: #ffffff;
@@ -765,6 +781,10 @@ aside h3 {
     flex-direction: column;
     align-items: center;
   }
+  #banner div a img:hover {
+    transform: none;
+    transition: none;
+  }
   #banner img {
     width: 100%;
     height: auto;
@@ -792,6 +812,49 @@ aside h3 {
     margin-bottom: 20px;
     width: 100%;
     box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 992px) {
+  * {
+    box-sizing: border-box;
+  }
+  html, body {
+    width: 100%;
+    overflow-x: hidden !important;
+    padding: 0;
+    margin: 0;
+  }
+  img,
+  video {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+  .card {
+    width: 100% !important;
+    max-width: 300px !important;
+    min-width: 0 !important;
+  }
+  .container,
+  .container-fluid,
+  .row,
+  .grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+    padding: 0 !important;
+  }
+  .navbar,
+  .navbar * {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  .banner-img-container {
+    overflow: hidden !important;
+  }
+  .socialmedia {
+    flex-direction: column !important;
+    align-items: center !important;
   }
 }
 .login {
@@ -1396,6 +1459,13 @@ div#borderlogin.card.login:hover {
     margin-top: 20px;
     padding: 0 20px;
     text-align: center;
+  }
+}
+@media screen and (max-width: 992px) {
+  #boton-carrito {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
 }
 

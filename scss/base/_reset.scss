@@ -32,6 +32,7 @@ h6 {
 }
 html, body {
     overflow-x: hidden;
-    
-    
-}
+    scroll-behavior: smooth;
+    touch-action: manipulation;
+    max-width: 100%;
+  }
