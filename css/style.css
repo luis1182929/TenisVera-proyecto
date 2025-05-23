@@ -590,6 +590,17 @@ main h2 {
   font-size: 25px;
 }
 
+.navbar-collapse {
+  position: relative;
+  z-index: 1050;
+  background-color: #fafafa;
+}
+
+.login {
+  position: relative;
+  z-index: 1;
+}
+
 aside {
   grid-area: aside;
   background-color: #ffffff;

@@ -28,3 +28,13 @@
 .breadcrumb {
     font-size: 25px;
 }
+.navbar-collapse {
+    position: relative;
+    z-index: 1050;
+    background-color: #fafafa;
+  }
+  
+  .login {
+    position: relative;
+    z-index: 1;
+  }
