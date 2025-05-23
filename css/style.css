@@ -71,6 +71,10 @@
   align-self: center;
 }
 
+main {
+  flex: 1;
+}
+
 .ofertared {
   color: #d90429;
 }
@@ -378,12 +382,31 @@ footer .nav-footer ul {
   color: #000000;
 }
 
+footer {
+  width: 100%;
+  margin-top: auto;
+}
+
 @media screen and (max-width: 992px) {
   .contact-info {
     display: flex;
     flex-direction: column !important;
     align-items: center;
     margin-top: 0px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main {
+    flex: 1;
+  }
+  footer {
+    margin-top: auto;
+    height: 300px;
   }
 }
 div form {
@@ -433,9 +456,10 @@ div form {
 
 .grid {
   display: grid;
+  min-height: 100vh;
   grid-template-areas: "header   header   header header" "carousel carousel carousel carousel" "banner   banner   banner aside" "main     main     main   aside" "ofertas ofertas  ofertas aside" "footer   footer   footer footer";
   grid-template-columns: auto auto auto 150px;
-  grid-template-rows: 1fr auto auto auto;
+  grid-template-rows: auto auto auto 1fr auto auto auto;
 }
 
 #header {
@@ -1228,7 +1252,7 @@ div#borderlogin.card.login:hover {
 }
 #contacto-grid {
   display: grid;
-  grid-template-areas: "header header " "texto formulario" "mapa  mapa" "footer footer";
+  grid-template-areas: "header header" "texto formulario" "mapa mapa" "footer footer";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
 }
@@ -1333,10 +1357,53 @@ div#borderlogin.card.login:hover {
   grid-area: footer;
 }
 
+/* MEDIA QUERIES */
 @media screen and (max-width: 992px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
   #contacto-grid {
     grid-template-areas: "header" "texto" "formulario" "mapa" "footer";
     grid-template-columns: 1fr;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 0 10px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .full-width {
+    grid-column: 1/-1 !important;
+  }
+  #formulario-contacto,
+  #contacto-text,
+  #map-contacto {
+    padding: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+  .navbar,
+  .container-fluid,
+  .navbar-collapse,
+  .navbar-toggler,
+  .navbar-brand {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 }
 #carrito-grid {

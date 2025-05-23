@@ -55,6 +55,10 @@ footer {
     margin-top: 0px;
     color: #000000;
   }
+  footer {
+    width: 100%;
+    margin-top: auto; 
+  }
   @media screen and (max-width: 992px) {
     .contact-info {
       display: flex;
@@ -64,4 +68,21 @@ footer {
       margin-top: 0px;
     }
     
+}
+@media screen and (max-width: 992px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  footer {
+    margin-top: auto;
+    height: 300px;
+    
+  }
 }
